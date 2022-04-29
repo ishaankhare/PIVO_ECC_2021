@@ -1,0 +1,1 @@
+function [d,v] = distance(bot_path,bot_Vpath)    d = 0;    s = length(bot_path);    v = [];    for i=2:s        d_new = sqrt(sum((bot_path(:,i)-bot_path(:,i-1)).^2));        d = d + d_new;        a = d_new/0.1;        v = [v;a];    end       figure(2);%     plot(v);%     axis([0 length(bot_Vpath) -20 20]);end
